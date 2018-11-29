@@ -15,6 +15,7 @@ node {
   }
   stage('Compilar') {
     echo "Comienza la compilación..."
+    compile
   }
   stage('Test') {
     echo "Comienzan las pruebas..."
