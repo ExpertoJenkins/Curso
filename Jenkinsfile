@@ -1,4 +1,4 @@
-/*pipeline {
+pipeline {
   agent any
   stages {
     stage('Etapa 1') {B
@@ -8,7 +8,8 @@
       }
    }
 }
-*/
+
+/*
 node {
   stage('Build') {
     echo "Adios Mundo!!!!!"
@@ -22,6 +23,6 @@ node {
   }
   stage('Empaquetar') {
     echo "Comienza la empaquetacion..."
-    mvn package
   }
 }
+*/
