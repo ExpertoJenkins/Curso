@@ -1,3 +1,4 @@
+/*
 pipeline {
   agent any
   stages {
@@ -8,12 +9,9 @@ pipeline {
       }
    }
 }
-
-/*
+*/
 node {
-  stage('Build') {
-    echo "Adios Mundo!!!!!"
-  }
+  checkout scm
   stage('Compilar') {
     echo "Comienza la compilación..."
     mvn compile
@@ -25,4 +23,4 @@ node {
     echo "Comienza la empaquetacion..."
   }
 }
-*/
+
