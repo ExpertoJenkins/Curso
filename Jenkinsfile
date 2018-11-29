@@ -13,4 +13,13 @@ node {
   stage('Build') {
     echo "Adios Mundo!!!!!"
   }
+  stage('Compilar') {
+    echo "Comienza la compilación..."
+  }
+  stage('Test') {
+    echo "Comienzan las pruebas..."
+  }
+  stage('Empaquetar') {
+    echo "Comienza la empaquetacion..."
+  }
 }
