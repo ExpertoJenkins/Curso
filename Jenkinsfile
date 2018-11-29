@@ -15,12 +15,13 @@ node {
   }
   stage('Compilar') {
     echo "Comienza la compilación..."
-    compile
+    mvn compile
   }
   stage('Test') {
     echo "Comienzan las pruebas..."
   }
   stage('Empaquetar') {
     echo "Comienza la empaquetacion..."
+    mvn package
   }
 }
