@@ -18,7 +18,7 @@ node {
     withMaven(
         maven:'Maven por defecto (3.6)'
     ){
-      sh 'mvn complie'
+      sh 'mvn compile'
     }
   }
   stage('Test') {
