@@ -34,11 +34,11 @@ node {
  //   withMaven(
  //       maven:'Maven por defecto (3.6)'
   //  ){
-    try(
+    try{
       sh 'mvn package'
-      )finally(
+    }finally{
         deleteDir()
-      )
+    }
  //   }
   }
 }
