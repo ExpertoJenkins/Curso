@@ -37,7 +37,7 @@ node {
     try{
       sh 'mvn package'
     }finally{
-        deleteDir()
+       // deleteDir()
     }
  //   }
   }
