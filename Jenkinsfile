@@ -12,17 +12,17 @@ pipeline {
 */
 pipeline {
 agent any
-  stages {
-  stage('Compilar') {
-    steps{
-    echo "Comienza la compilación..."
-   withMaven(
-        maven:'Maven por defecto (3.6)'
-   ){
-      sh 'mvn compile'
-   }
-  }
-}
+    stages {
+          stage('Compilar') {
+            steps{
+            echo "Comienza la compilación..."
+            withMaven(
+              maven:'Maven por defecto (3.6)'
+                    ){
+            sh 'mvn compile'
+            }
+        }
+      }
     
   stage('Test') {
     steps{
@@ -42,11 +42,24 @@ agent any
    withMaven(
        maven:'Maven por defecto (3.6)'
   ){
-   // try{
       sh 'mvn package'
-    //}finally{
-     //deleteDir()
-    }
- //   }
+   }
   }
+  }
+    }
+  post {
+    always{
+        deleteDir()
+    }
+    failure {
+      echo "UPS"
+    }
+    success {
+      echo "Exito"
+    }
+    changed {
+      echo 'Cambio'
+    }
+  }
+}
 
