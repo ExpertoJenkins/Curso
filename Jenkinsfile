@@ -1,3 +1,40 @@
+node ('master'){ 
+    checkout scm
+    stage('Compilar') {
+	echo "Comienza la compilacion..."
+	withMaven(
+           maven:'Maven Test'			
+	){
+         sh 'mvn compile'
+	}
+    }
+    stage('Test') {
+	echo "Comienzan las pruebas..."
+	withMaven(
+           maven:'Maven Test'			
+	){
+         sh 'mvn test'
+	}
+    }
+    stage('Empaquetar') {
+	echo "Comienza la empaquetacion..."
+	withMaven(
+           maven:'Maven Test'			
+	){
+         sh 'mvn package'
+	}
+    }
+}
+
+
+
+
+
+
+
+
+
+
 /*
 pipeline {
   agent any
@@ -32,7 +69,7 @@ agent any
         maven:'Maven por defecto (3.6)'
    ){
       sh 'mvn test'
-          junit keepLongStdio: true, testResults: '*.xml'
+          junit keepLongStdio: true, testResults: '#poner dos asteriscos#/*.xml'
    }
   }
   }
@@ -65,7 +102,7 @@ agent any
 }
 */
 
-
+/*
 node {
     try {
         stage('Test') {
@@ -89,3 +126,4 @@ node {
         echo 'Se ejecuta siempre'
     }
 }
+*/
