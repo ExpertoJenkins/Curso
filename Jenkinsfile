@@ -27,6 +27,7 @@ node {
 //        maven:'Maven por defecto (3.6)'
 //    ){
       sh 'mvn test'
+          junit keepLongStdio: true, testResults: '**/*.xml'
 //    }
   }
   stage('Empaquetar') {
@@ -38,7 +39,6 @@ node {
       sh 'mvn package'
     }finally{
        // deleteDir()
-      junit keepLongStdio: true, testResults: '**/*.xml'
     }
  //   }
   }
