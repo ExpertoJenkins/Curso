@@ -38,6 +38,7 @@ node {
       sh 'mvn package'
     }finally{
        // deleteDir()
+      junit keepLongStdio: true, testResults: '**/*.xml'
     }
  //   }
   }
