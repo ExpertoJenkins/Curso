@@ -69,7 +69,7 @@ agent any
 node {
     try {
         stage('Test') {
-            sh 'echo "Fallo!"; exit 1'
+            sh 'echo "ÉXITO!"; exit 0'
         }
         echo 'Se ejecuta si exito'
     } catch (e) {
